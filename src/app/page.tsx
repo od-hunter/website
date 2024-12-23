@@ -235,7 +235,6 @@ function App() {
         description: "Mint Card Success~",
         className: "bg-[#573019] text-white",
       });
-      setShowFinalContent(false);
       setTimeout(() => {
         setMintSuccess(true);
       }, 2000);
@@ -317,21 +316,68 @@ art3mis.xyz
               {!showTips && !showTable && !showCardList && (
                 <div
                   className="absolute flex flex-col md:flex-row justify-center items-center z-10 w-full md:w-auto 
-                               left-0 md:left-[20%] top-[50%] md:top-[60%] transform -translate-y-1/2"
+                               left-0 md:left-[20%] top-[50%] md:top-[80%] transform -translate-y-1/2"
                 >
                   {/* AskCat container - Responsive sizing */}
-                  <div className="w-[120px] md:w-[150px] lg:w-[240px] aspect-[120/160]">
+                  <div className="w-[120px] md:w-[140px] lg:w-[220px] aspect-[120/160]">
                     <AskCat />
                   </div>
+
+                  {/* <div className="flex flex-col gap-2 justify-center items-center ml-[-16px]">
+                  <div
+                    className="relative w-full"
+                    style={{
+                      width: "clamp(423px, calc(846 / 1920 * 100vw), 846px)",
+                      aspectRatio: "423/44",
+                    }}
+                  >
+                    <Image
+                      src="/images/ask_box.webp"
+                      alt="Ask"
+                      width={423}
+                      height={44}
+                      sizes="423px"
+                      className="w-full h-full"
+                      priority
+                    />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f5be66] text-[0.5rem] sm:text-[0.5rem] md:text-[0.75rem] lg:text-[1.1rem] font-bold [text-shadow:1px_1px_5px_black] whitespace-nowrap blur-[0.6px] px-4 py-2 rounded">
+                      Welcome, seeker of truth. The cards await your fate. Shall
+                      we begin?
+                    </div>
+                  </div> */}
 
                   {/* Text and button container */}
                   <div className="flex flex-col gap-4 justify-center items-center mt-4 md:mt-0">
                     {/* Text box - Responsive width and font size */}
-                    <div className="w-full max-w-[300px] md:max-w-[846px] px-3">
+                    <div className="w-full max-w-[300px] md:hidden md:max-w-[846px] px-3">
                       <div
                         className="font-irishGrover py-2 w-full border bg-opacity-20 bg-black backdrop-blur-sm 
-                                    border-[#C77F7F] shadow-[0_2px_8px_1px_#C77F7F] md:whitespace-nowrap  rounded-md text-[#f5be66] text-[0.5rem] sm:text-[0.5rem] md:text-[0.75rem] lg:text-[1.1rem] font-bold [text-shadow:1px_1px_5px_black] whitespace-nowrap blur-[0.6px] px-4 "
+                                    border-[#C77F7F] shadow-[0_2px_8px_1px_#C77F7F] md:whitespace-nowrap text-wrap  rounded-md text-[#f5be66] text-[0.5rem] sm:text-[0.5rem] md:text-[0.75rem] lg:text-[1.1rem] font-bold [text-shadow:1px_1px_5px_black] whitespace-nowrap blur-[0.6px] px-4 "
                       >
+                        Welcome, seeker of truth. The cards await your fate.
+                        Shall we begin?
+                      </div>
+                    </div>
+
+                    {/* mobile  */}
+
+                    <div
+                      className="relative hidden md:block  h-auto md:w-[623px]  "
+                      style={{
+                        // width: "clamp(423px, calc(846 / 1920 * 100vw), 846px)",
+                        aspectRatio: "423/44",
+                      }}
+                    >
+                      <Image
+                        src="/images/ask_box.webp"
+                        alt="Ask"
+                        width={423}
+                        height={44}
+                        sizes="423px"
+                        className="w-full h-full "
+                        priority
+                      />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#f5be66] text-[0.5rem] sm:text-[0.5rem] md:text-[0.75rem] lg:text-[1.1rem] font-bold [text-shadow:1px_1px_5px_black] md:whitespace-nowrap blur-[0.6px] px-4 py-2 rounded">
                         Welcome, seeker of truth. The cards await your fate.
                         Shall we begin?
                       </div>
@@ -788,7 +834,7 @@ art3mis.xyz
                 <div className="absolute w-full md:justify-center md:top-[44%] md:mr-52 content-center items-center flex flex-col font-bold text-white  ">
                   <div className="flex flex-row w-full md:w-[65%] ">
                     <div
-                      className=" relative md:top-36 md:left-10 w-[100px]  h-[200px] md:h-auto md:w-[200px] z-30 "
+                      className=" relative md:top-36 md:left-16 w-[100px]  h-[200px] md:h-[280px] md:w-[220px] z-30 "
                       style={{
                         // width: "clamp(135px, calc(270 / 1920 * 100vw), 270px)",
                         aspectRatio: "135/179",
