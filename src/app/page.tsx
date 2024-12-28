@@ -13,6 +13,8 @@ import { mintCard, MintCardArguments } from "@/entry-functions/mintCard";
 import { aptosClient } from "@/utils/aptosClient";
 import dynamic from "next/dynamic";
 import { MODULE_ADDRESS } from "@/constants";
+import FireLeft from "@/components/FireLeft";
+import FireRight from "@/components/FireRight";
 
 const FireAnimation = dynamic(() => import("@/components/FireAnimation"), {
   ssr: false,
@@ -267,7 +269,7 @@ art3mis.xyz
   };
 
   return (
-    <div className="w-full h-screen bg-black flex flex-col items-center justify-center">
+    <div className="w-full h-screen bg-black flex flex-col items-center justify-center ">
       {bgLoading ? (
         <div className="w-full h-screen bg-black animate-pulse">
           <Loading />
@@ -285,18 +287,14 @@ art3mis.xyz
               src="/images/bg.webp"
               alt="background"
               fill
-              className="absolute object-cover w-full h-full "
+              // className="absolute object-cover w-full h-full "
+              className="absolute top-0 left-0 w-full h-full object-cover md:object-fill "
             />
             {/* fire animation */}
 
-            <div
-              className="hidden md:block mb-[80px] justify-center content-center items-center left-0 w-full h-full transform"
-              style={{
-                transform: "skewY(-4deg)", // Slight upward skew on the right side
-              }}
-            >
-              <FireAnimation />
-            </div>
+            <FireLeft />
+
+            <FireRight />
 
             {/* wallet */}
             <div
@@ -341,7 +339,7 @@ art3mis.xyz
                     <div
                       className="relative hidden md:block  h-auto md:w-[623px]  "
                       style={{
-                        // width: "clamp(423px, calc(846 / 1920 * 100vw), 846px)",
+                        width: "clamp(423px, calc(846 / 1920 * 100vw), 846px)",
                         aspectRatio: "423/44",
                       }}
                     >
